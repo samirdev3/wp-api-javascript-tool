@@ -1,0 +1,315 @@
+/** THEME - BLACK & WHITE **/
+/** DEFAULT **/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: #eeeeee;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  line-height: 0;
+  display: block;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+._version {
+  margin-bottom: 10px;
+  color: #fff;
+  display: block;
+}
+
+/** HOMEPAGE **/
+body.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
+}
+
+body.home header {
+  min-height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000;
+  width: 20%;
+  padding: 30px 2% 0 2%;
+  border-right: 2px solid #000;
+}
+
+body.home form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+body.home input, body.home select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #000;
+  outline: none;
+  margin-bottom: 5px;
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  color: #000;
+}
+
+body.home button {
+  border: none;
+  padding: 10px 25px;
+  background: #ffc107;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+body.home section {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 0;
+}
+
+body.home #category_title {
+  margin-bottom: 20px;
+}
+
+body.home #output_wrapper .steps {
+  padding: 14px;
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 10px;
+  border: 2px solid black;
+}
+
+body.home #output_wrapper .steps ul {
+  margin-left: 20%;
+}
+
+body.home #output_wrapper .steps ul li {
+  padding: 8px 0;
+}
+
+body.home #output_wrapper .steps strong {
+  width: 15%;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+body.home .article_list {
+  margin-bottom: 15px;
+}
+
+body.home .article_list a {
+  display: block;
+  background-color: white;
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 6px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body.home .article_list a:hover {
+  border: 2px solid #ffc107;
+}
+
+/** ARTICLE **/
+body.article {
+  padding: 2rem 0;
+  background-color: transparent;
+}
+
+body.article .info {
+  padding: 10px;
+  border: 2px solid #000;
+  margin-bottom: 15px;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+
+body.article .info span {
+  font-weight: 700;
+}
+
+body.article #title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+body.article #featured_image {
+  margin-bottom: 15px;
+  border: 2px solid #ffc107;
+}
+
+body.article #featured_image::after {
+  content: 'Featured Image';
+  display: block;
+  padding: 2px 10px;
+  text-align: center;
+  background: #ffc107;
+}
+
+body.article .wp-block-image,
+body.article embed,
+body.article iframe {
+  margin-bottom: 25px;
+}
+
+body.article embed,
+body.article iframe {
+  width: 100%;
+  height: auto;
+}
+
+body.article .wp-block-image img {
+  margin-bottom: 0px;
+  line-height: 0;
+  display: block;
+  border-radius: 6px;
+  border: 2px solid #000;
+}
+
+body.article figcaption {
+  background-color: #ffe227;
+  padding: 10px;
+}
+
+#popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 100%;
+  max-width: 250px;
+  background: white;
+  min-height: 40px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.15);
+  border: 2px solid #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(0, 0, 0, 0.7);
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+#popup.active {
+  -webkit-animation-name: slideTop;
+          animation-name: slideTop;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes slideTop {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  from {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/** RESPONSIVE **/
+@media (max-width: 900px) {
+  body.home {
+    display: block;
+  }
+  body.home header,
+  body.home section {
+    width: 100%;
+    padding: 20px;
+  }
+  body.home header {
+    min-height: 20vh;
+  }
+}
+/*# sourceMappingURL=style.css.map */

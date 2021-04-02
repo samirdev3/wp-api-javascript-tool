@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <title>Wordpress Rest API Tool</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home">
+
+<header>
+    <div class="_version">version 1.1</div>
+    <form>
+        <input type="text" name="" id="website" placeholder="Only Homepage URL">
+
+        <div class="field_group">
+            <select name="" id="select_type">
+                <option value="0">= Search By =</option>
+                <option value="cat">By Categories</option>
+                <option value="ids">By ID's</option>
+            </select>
+            <select name="" id="web_cat" class="hidden"><option>loading...</option></select>
+            <input type="text" name="" id="total_list" class="hidden" placeholder="Total Number of Lists (optional)">
+            <button id="by_cat" type="button" class="hidden">Get Lists</button>
+        </div>
+        
+        <div class="field_group">
+            <input type="text" name="" id="post_id" class="hidden" placeholder="Enter post ID here">
+            <button id="by_id" type="button" class="hidden">Get Article</button>
+        </div>
+
+    
+    </form>
+</header>
+
+<section>
+    <div class="container">
+        <h1 id="category_title" class="hidden"></h1>
+        <div id="output_wrapper">
+            <h1 id="category_title">How It Works!</h1>
+                <div class="steps">
+                    <strong>Step 1:</strong>
+                    <span>Enter the website homepage URL.</span>
+                </div>
+                <div class="steps">
+                    <strong>Step 2:</strong>
+                    <span>Select any one option from the "Search By".</span>
+                    <ul>
+                        <li>By Categories - Select any of the category from the list. By default the list is of 25 articles.</li>
+                        <li>By ID's - Enter the post ID of the particular article.</li>
+                    </ul>
+                </div>
+                <div class="steps">
+                    <strong>Step 3:</strong>
+                    <span>Press the "Get Lists" or "Get Article" button as per the above selected option.</span>
+                </div>
+                <p><small>Note: This tools only works for the WordPress websites which has REST API enabled.</small></p>
+        </div>
+    </div>
+</section>
+
+<div id="popup"></div>
+
+<!-- Scripts -->
+<script src="assets/js/app-home.js"></script>
+</body>
+</html>
