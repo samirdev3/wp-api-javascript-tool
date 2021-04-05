@@ -2,7 +2,7 @@ const   queryString = window.location.search,
         urlParams = new URLSearchParams(queryString),
         getPostID = urlParams.get('id'),
         getSite = urlParams.get('site'),
-        webURL = getSite+"/wp-json/wp/v2/posts/"+getPostID+"/";
+        webURL = `${getSite}/wp-json/wp/v2/posts/${getPostID}/`;
 
         
 runWebApiFetchScript(webURL, 'article');
@@ -15,20 +15,20 @@ function runWebApiFetchScript(fullURL, searchType){
 
         if(searchType === 'article'){
             document.querySelector('.post_id span').innerHTML = output.id;
-            const newURL = getSite+"/wp-json/wp/v2/media/"+output.featured_media+"/";
+            const newURL = `${getSite}/wp-json/wp/v2/media/${output.featured_media}/`;
             runWebApiFetchScript(newURL, 'media');
-            const fullArticle = '<article><h1 id="title">'+output.title.rendered+'</h1><div id="featured_image"></div>'+output.content.rendered+'</article>';
+            const fullArticle = `<article><h1 id="title">${output.title.rendered}</h1><div id="featured_image"></div>${output.content.rendered}</article>`;
             return [document.querySelector('#output_wrapper').innerHTML = fullArticle,triggerAfterContent()];
             
         }
 
         if(searchType === 'media'){
-            return document.getElementById('featured_image').innerHTML = "<img src="+output.guid.rendered+" />";
+            return document.getElementById('featured_image').innerHTML = `<img src="${output.guid.rendered}" />`;
         }
 
     })
     .catch(function (error) {
-        notificationPop('Error during fetch: ' + error.message);
+        notificationPop(`Error during fetch: ${error.message}`);
     });
 }
 

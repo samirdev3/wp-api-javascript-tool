@@ -35,7 +35,7 @@ getType.addEventListener('change',function(){
 /** Category button **/
 btnByCat.addEventListener('click',function(){
     (getTotalList.value != '') ? getTotalList.value : getTotalList.value = 25;
-    webURL = getWebsite.value+"/wp-json/wp/v2/posts?per_page="+getTotalList.value+"&categories="+getWebCat.value;
+    webURL = `${getWebsite.value}/wp-json/wp/v2/posts?per_page=${getTotalList.value}&categories=${getWebCat.value}`;
     runWebApiFetchScript(webURL, 'lists');
     setCatName = getWebCat.options[getWebCat.selectedIndex].text;
     if(setCatName != ''){
@@ -46,12 +46,12 @@ btnByCat.addEventListener('click',function(){
 });
 /** Post ID button **/
 btnById.addEventListener('click',function(){
-    newWindowPopup('article.html?site='+getWebsite.value+'&id='+getPostID.value);
+    newWindowPopup(`article.html?site=${getWebsite.value}&id=${getPostID.value}`);
 });
 
 /** by category function **/
 function searchByCategories(url){
-    const generateURL = url+'/wp-json/wp/v2/categories?per_page=50';
+    const generateURL = `${url}/wp-json/wp/v2/categories?per_page=50`;
     runWebApiFetchScript(generateURL, 'category');
 }
 
@@ -66,14 +66,14 @@ function runWebApiFetchScript(fullURL, searchType){
         if(searchType === 'category'){
             document.querySelector('#web_cat').innerHTML = "";
             return output.map(function(result){
-                document.querySelector('#web_cat').innerHTML += '<option value="'+result.id+'">'+result.name+'</option>';
+                document.querySelector('#web_cat').innerHTML += `<option value="${result.id}">${result.name}</option>`;
             });
         }
         
         if(searchType === 'lists'){
             return output.map(function(result){
                 const wrapper = document.querySelector('#output_wrapper');
-                wrapper.innerHTML += '<div class="article_list"><a href="article.html?site='+getWebsite.value+'&id='+result.id+'" target="_blank">'+result.title.rendered+'</a></div>';
+                wrapper.innerHTML += `<div class="article_list"><a href="article.html?site=${getWebsite.value}&id=${result.id}" target="_blank">${result.title.rendered}</a></div>`;
                 articleLinkPop();
             });
         }
@@ -81,7 +81,7 @@ function runWebApiFetchScript(fullURL, searchType){
 
     })
     .catch(function (error) {
-        notificationPop('Error during fetch: ' + error.message);
+        notificationPop(`Error during fetch: ${error.message}`);
     });
 }
 
@@ -100,7 +100,7 @@ for(let $i=0;$i<getArticleList.length;$i++){
 function newWindowPopup(getPopURL){
     const   winW = screen.width,
             winH = screen.height;
-    window.open(getPopURL, '_blank','toolbar=yes,scrollbars=yes,resizable=yes,top='+winH+',left='+winW+',width=620,height='+winH);
+    window.open(getPopURL, '_blank',`toolbar=yes,scrollbars=yes,resizable=yes,top=${winH},left=${winW/2 - 310},width=620,height=${winH}`);
 }
 
 /** Notification Popup **/
